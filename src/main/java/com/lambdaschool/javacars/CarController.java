@@ -2,9 +2,9 @@ package com.lambdaschool.javacars;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -41,6 +41,11 @@ public class CarController {
     // /cars/upload
     // loads multiple sets of data from the RequestBody
     // This gets logged with a message of "Data loaded"
+
+    @PostMapping("/cars/upload")
+    public List<Car> uploadCars(@RequestBody List<Car> cars) {
+        return carrepos.saveAll(cars);
+    }
 
     // ### DELETE
 
