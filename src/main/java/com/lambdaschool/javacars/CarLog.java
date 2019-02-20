@@ -13,7 +13,7 @@ public class CarLog implements Serializable {
     private final String formmattedDate;
 
     public CarLog (String text) {
-        this.text;
+        this.text = text;
         Date date = new Date();
         String strDateFormat = "yyyy-MM-dd hh:mm:ss a";
         DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
