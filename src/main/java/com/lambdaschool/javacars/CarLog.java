@@ -19,4 +19,10 @@ public class CarLog implements Serializable {
         DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
         formmattedDate = dateFormat.format(date);
     }
+
+    @Override
+    public String toString() {
+        return "{msg: " + text + "," +
+                "date: " + formmattedDate + "}";
+    }
 }
